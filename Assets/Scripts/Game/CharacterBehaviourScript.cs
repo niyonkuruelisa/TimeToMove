@@ -47,8 +47,17 @@ public class CharacterBehaviourScript : MonoBehaviour
 		HandleInput();
 	}
 
-	//movement//
-	void FixedUpdate()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if(collision.gameObject.tag == "Enemy")
+        {
+			Debug.Log("Working");
+        }
+
+	}
+
+    //movement//
+    void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool("Ground", grounded);
