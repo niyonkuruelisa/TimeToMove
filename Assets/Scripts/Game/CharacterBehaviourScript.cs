@@ -20,6 +20,10 @@ public class CharacterBehaviourScript : MonoBehaviour
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
+	private int HowManyHits = 0;
+
+	public static int PlayerHealthLevel;
+	public TMPro.TextMeshProUGUI playerTextHealth;
 
 
 	private float move = 0;
@@ -35,26 +39,72 @@ public class CharacterBehaviourScript : MonoBehaviour
 
 	void Start()
 	{
+		PlayerHealthLevel = 100;
 		GetComponent<Rigidbody2D>().freezeRotation = true;
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
 
 	}
 
-	void Update()
-	{
-		
-		HandleInput();
-	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+	private void HandleHealth()
     {
-		if(collision.gameObject.tag == "Enemy")
+		playerTextHealth.text = PlayerHealthLevel.ToString();
+	}
+	public void OnHitKeyDown()
+	{
+        if (!dead)
         {
-			Debug.Log("Working");
-        }
+			attack = true;
+			GetComponent<EdgeCollider2D>().enabled = true;
+			anim.SetBool("Attack", true);
+			anim.SetFloat("Speed", 0);
+		}
 
 	}
+	public void OnHitKeyUp()
+	{
+		if (!dead)
+		{
+
+			GetComponent<EdgeCollider2D>().enabled = false;
+			attack = false;
+			anim.SetBool("Attack", false);
+		}
+
+	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if (collision.tag == "Enemy")
+		{
+			// reset number of hits
+
+			if (HowManyHits == 1)
+			{
+				//Enemy take damange take damage
+
+				
+                if (EnemyAIScript.EnemyHealthLevel > 0)
+                {
+					EnemyAIScript.EnemyHealthLevel -= 20;
+				}
+                else
+                {
+					EnemyAIScript.EnemyHealthLevel = 0;
+				}
+				//after reset Hits
+				HowManyHits = 0;
+				//Debug.Log("Enemy Damaged");
+			}
+			else
+			{
+				HowManyHits += 1;
+			}
+		}
+	}
+
 
     //movement//
     void FixedUpdate()
@@ -79,9 +129,8 @@ public class CharacterBehaviourScript : MonoBehaviour
 			Flip(horizontal);
 		}
 
-
-		//Touch movement
-		//TouchMovement();
+		HandleHealth();
+		HandleInput();
 	}
 
 
