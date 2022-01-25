@@ -34,7 +34,7 @@ public class CharacterBehaviourScript : MonoBehaviour
 
 	public Rigidbody2D rb { get; set; }
 
-	bool dead = false;
+	public static bool dead = false;
 	bool attack = false;
 
 	void Start()
@@ -52,6 +52,7 @@ public class CharacterBehaviourScript : MonoBehaviour
 	private void HandleHealth()
     {
 		playerTextHealth.text = PlayerHealthLevel.ToString();
+
 	}
 	public void OnHitKeyDown()
 	{
@@ -92,7 +93,9 @@ public class CharacterBehaviourScript : MonoBehaviour
 				}
                 else
                 {
+
 					EnemyAIScript.EnemyHealthLevel = 0;
+					
 				}
 				//after reset Hits
 				HowManyHits = 0;
@@ -102,12 +105,46 @@ public class CharacterBehaviourScript : MonoBehaviour
 			{
 				HowManyHits += 1;
 			}
+
+            if (EnemyAIScript.EnemyHealthLevel == 0)
+            {
+				//rotate enemy to the other side to prevent further collisions
+				Vector3 theScale = collision.gameObject.transform.localScale;
+				theScale.x *= -1;
+				EnemyAIScript.dead = true;
+				collision.gameObject.transform.localScale = theScale;
+
+				collision.gameObject.GetComponent<EnemyAIScript>().PanelHealthCounter.SetActive(false);
+
+				//Play dead animation then destroy enemy
+				collision.gameObject.GetComponent<Animator>().Play("death_01");
+				Destroy(collision.gameObject, 2.0f);
+				//Reset enemy class  health and isDead
+				EnemyAIScript.dead = false;
+
+				EnemyAIScript.EnemyHealthLevel = 100;
+
+			}
+
+		}else if (collision.tag == "Life")
+        {
+			
+			PlayerHealthLevel = 100;
+			Destroy(collision.gameObject);
+
 		}
 	}
 
-
-    //movement//
-    void FixedUpdate()
+	public void SetAllCollidersStatus(bool active,GameObject obj)
+	{
+		foreach (Collider c in obj.GetComponents<Collider>())
+		{
+			c.enabled = active;
+   
+		}
+	}
+	//movement//
+	void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool("Ground", grounded);

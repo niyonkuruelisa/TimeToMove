@@ -16,12 +16,14 @@ public class CameraFollow : MonoBehaviour
 
     void Follow()
     {
-        Vector3 targetPosition = target.position + offset;
-        //Verify if the targetPosition is out of bound or not
- 
+        if (!CharacterBehaviourScript.dead)
+        {
+            Vector3 targetPosition = target.position + offset;
+            //Verify if the targetPosition is out of bound or not
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
+            transform.position = smoothPosition;
+        }
 
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
-        transform.position = smoothPosition;
     }
 
 }

@@ -9,7 +9,15 @@ public class UI_NavigationScript : MonoBehaviour
 
 
     //LEVELS SCENES
+    //Reload Level
+    public void ReloadScene()
+    {
 
+        CharacterBehaviourScript.dead = false;
+        //fully reload Scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
     //Level Menu
     // MENU BUTTON - Load MENU Scene
     public void OnMenuButtonClicked()
