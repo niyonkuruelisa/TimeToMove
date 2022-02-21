@@ -17,11 +17,11 @@
 
   <img alt="License" src="https://img.shields.io/github/license/niyonkuruelisa/TimeToMove?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
+  <img alt="Github issues" src="https://img.shields.io/github/issues/niyonkuruelisa/TimeToMove?color=56BEB8" />
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
+  <img alt="Github forks" src="https://img.shields.io/github/forks/niyonkuruelisa/TimeToMove?color=56BEB8" />
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
+  <img alt="Github stars" src="https://img.shields.io/github/stars/niyonkuruelisa/TimeToMove?color=56BEB8" />
 </p>
 
 <!-- Status -->
@@ -58,15 +58,13 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Unity](https://unity3d.com/get-unity/download)
+- [Visual Studio](https://visualstudio.microsoft.com/vs/)
+- [Git](https://git-scm.com)
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com),[Unity](https://unity3d.com/get-unity/download) and [Visual Studio](https://visualstudio.microsoft.com/vs/en/) installed.
 
 ## :checkered_flag: Starting ##
 
@@ -77,13 +75,7 @@ $ git clone https://github.com/niyonkuruelisa/TimeToMove
 # Access
 $ cd TimeToMove
 
-# Install dependencies
-$ yarn
-
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
+=> Enjoy!!
 ```
 
 ## :memo: License ##
