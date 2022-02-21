@@ -1459,7 +1459,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1530322970}
   m_HandleRect: {fileID: 1530322969}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1538,8 +1538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7861, y: -11.3584}
-  m_SizeDelta: {x: 316.1072, y: 312.5034}
+  m_AnchoredPosition: {x: 3.7861, y: -21.4992}
+  m_SizeDelta: {x: 316.1072, y: 292.2218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133675255
 MonoBehaviour:
@@ -1561,13 +1561,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'What is Lorem Ipsum?
-
-    Lorem Ipsum is simply dummy text of the printing
-    and typesetting industry. Lorem Ipsum has been the industry''s standard dummy
-    text ever since the 1500s, when an unknown printer took a galley of type and
-    scrambled it to make a type specimen book. It has survived not only five centuries,
-    but also the leap into electronic typesetting, remaining essentially unchanged. '
+  m_text: It is easy to play this game! Just tap and hold LEFT or RIGHT button to
+    move and Tap UP Button to Jumb, click RED SWORD Button to Fight Enemy. Again
+    you need to correct Red Hearts to regain your power  after killing enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c88efd5498b02644790060697d0d9939, type: 2}
   m_sharedMaterial: {fileID: -6488033039725770087, guid: c88efd5498b02644790060697d0d9939, type: 2}
@@ -1594,7 +1590,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.95
+  m_fontSize: 37.05
   m_fontSizeBase: 28.5
   m_fontWeight: 400
   m_enableAutoSizing: 1

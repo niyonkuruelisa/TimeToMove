@@ -13,6 +13,7 @@ public class EnemyAIScript : MonoBehaviour
     public GameObject PanelHealthCounter;
 	private int HowManyHits = 0;
     public GameObject player;
+
     public GameObject PanelGameEnd;
 
 
@@ -30,8 +31,9 @@ public class EnemyAIScript : MonoBehaviour
 
         animator = this.GetComponent<Animator>();
         
-    }
 
+
+    }
     // Update is called once per frame
     void FixedUpdate() 
     {
@@ -58,9 +60,21 @@ public class EnemyAIScript : MonoBehaviour
             {
                 PanelHealthCounter.SetActive(true);
                 animator.SetBool("Attack", true);
+                //set body kinematic so that player can't push enemy
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
+                //if not simulated collision and it's attachment will not move
+                //GetComponent<Rigidbody2D>().simulated = false;
+
             }
             else
             {
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //if sumulated  collision will move
+                //GetComponent<Rigidbody2D>().simulated = true;
+
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 animator.SetBool("Attack", false);
             }
 
@@ -74,9 +88,9 @@ public class EnemyAIScript : MonoBehaviour
                 Flip(1);
             }
 
-            HandleHealth();
+            
         }
-
+        HandleHealth();
     }
 
     private void HandleHealth()
@@ -123,9 +137,12 @@ public class EnemyAIScript : MonoBehaviour
                 Vector3 theScale = collision.gameObject.transform.localScale;
                 theScale.x *= -1;
                 collision.gameObject.transform.localScale = theScale;
+                FindObjectOfType<AudioManager>().Play("player_die");
+                //play game over sound
+                FindObjectOfType<AudioManager>().Play("game_over");
                 //Play dead animation then destroy enemy
                 collision.gameObject.GetComponent<Animator>().Play("Dead - Idle - Bat");
-                Destroy(collision.gameObject, 2.0f);
+                Destroy(collision.gameObject, 3.0f);
                 Time.timeScale = 0;
                 PanelGameEnd.SetActive(true);
 

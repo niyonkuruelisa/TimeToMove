@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1917842582722109407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917842582722109401}
+  - component: {fileID: 1917842582722109400}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917842582722109401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917842582722109407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 125.18861, y: 16.329573, z: -4.079207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917842582722109400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917842582722109407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4556ec545cb71334c853c8a3359c0658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 4299a340276589a4daec8a2c308b8f95, type: 2}
+  sounds:
+  - name: zombie_die
+    clip: {fileID: 8300000, guid: 5224e954dc1ae8e42a0d145801c2151a, type: 3}
+    volume: 0.66
+    volumeVariance: 0.66
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 3792774745241730056, guid: 4299a340276589a4daec8a2c308b8f95, type: 2}
+    source: {fileID: 0}
+  - name: game_over
+    clip: {fileID: 8300000, guid: ec6407c7ebe696048a17fc204a1e8ff3, type: 3}
+    volume: 0.66
+    volumeVariance: 0.674
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1182640813075243749, guid: 4299a340276589a4daec8a2c308b8f95, type: 2}
+    source: {fileID: 0}
+  - name: life_increase
+    clip: {fileID: 8300000, guid: 2ed2d767aa7359c4484b792ac3abde01, type: 3}
+    volume: 0.764
+    volumeVariance: 0.757
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -7817008137800217815, guid: 4299a340276589a4daec8a2c308b8f95, type: 2}
+    source: {fileID: 0}
+  - name: player_die
+    clip: {fileID: 8300000, guid: b73f0f0ff6fc11f4e9e96ba63709efec, type: 3}
+    volume: 0.764
+    volumeVariance: 0.757
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -5438334730579666272, guid: 4299a340276589a4daec8a2c308b8f95, type: 2}
+    source: {fileID: 0}

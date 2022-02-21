@@ -24,6 +24,7 @@ public class CharacterBehaviourScript : MonoBehaviour
 
 	public static int PlayerHealthLevel;
 	public TMPro.TextMeshProUGUI playerTextHealth;
+	public GameObject PanelGameEnd;
 
 
 	private float move = 0;
@@ -39,15 +40,13 @@ public class CharacterBehaviourScript : MonoBehaviour
 
 	void Start()
 	{
+		Time.timeScale = 1;
 		PlayerHealthLevel = 100;
 		GetComponent<Rigidbody2D>().freezeRotation = true;
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponentInChildren<Animator>();
 
 	}
-
-
-
 
 	private void HandleHealth()
     {
@@ -115,7 +114,13 @@ public class CharacterBehaviourScript : MonoBehaviour
 				collision.gameObject.transform.localScale = theScale;
 
 				collision.gameObject.GetComponent<EnemyAIScript>().PanelHealthCounter.SetActive(false);
+				//remove collision so that player can pass throught
+				foreach(Collider2D collider2D in collision.gameObject.GetComponents<Collider2D>())
+                {
+					collider2D.enabled = false;
 
+				}
+				FindObjectOfType<AudioManager>().Play("zombie_die");
 				//Play dead animation then destroy enemy
 				collision.gameObject.GetComponent<Animator>().Play("death_01");
 				Destroy(collision.gameObject, 2.0f);
@@ -130,12 +135,25 @@ public class CharacterBehaviourScript : MonoBehaviour
         {
 			
 			PlayerHealthLevel = 100;
+			FindObjectOfType<AudioManager>().Play("life_increase");
 			Destroy(collision.gameObject);
 
 		}
 	}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.gameObject.tag == "Victory")
+		{
+			//play game over sound
+			FindObjectOfType<AudioManager>().Play("game_over");
+			Time.timeScale = 0;
+			PanelGameEnd.SetActive(true);
+			Destroy(gameObject, 3.0f);
 
-	public void SetAllCollidersStatus(bool active,GameObject obj)
+		}
+	}
+
+    public void SetAllCollidersStatus(bool active,GameObject obj)
 	{
 		foreach (Collider c in obj.GetComponents<Collider>())
 		{
