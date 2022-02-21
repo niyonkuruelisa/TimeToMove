@@ -60,11 +60,12 @@ The following tools were used in this project:
 
 - [Unity](https://unity3d.com/get-unity/download)
 - [Visual Studio](https://visualstudio.microsoft.com/vs/)
-- [Git](https://git-scm.com)
+- [C# Programming](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [Git](https://git-scm.com/downloads)
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com),[Unity](https://unity3d.com/get-unity/download) and [Visual Studio](https://visualstudio.microsoft.com/vs/en/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com/downloads),[Unity](https://unity3d.com/get-unity/download) and [Visual Studio](https://visualstudio.microsoft.com/vs/en/) installed.
 
 ## :checkered_flag: Starting ##
 
