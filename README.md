@@ -9,19 +9,19 @@
 <h1 align="center">Time To Move</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/niyonkuruelisa/time-to-move?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/niyonkuruelisa/TimeToMove?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/niyonkuruelisa/time-to-move?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/niyonkuruelisa/TimeToMove?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/niyonkuruelisa/time-to-move?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/niyonkuruelisa/TimeToMove?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/niyonkuruelisa/time-to-move?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/niyonkuruelisa/TimeToMove?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/niyonkuruelisa/time-to-move?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/niyonkuruelisa/time-to-move?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/niyonkuruelisa/time-to-move?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/niyonkuruelisa/TimeToMove?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -72,10 +72,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/niyonkuruelisa/time-to-move
+$ git clone https://github.com/niyonkuruelisa/TimeToMove
 
 # Access
-$ cd time-to-move
+$ cd TimeToMove
 
 # Install dependencies
 $ yarn
